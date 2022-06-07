@@ -36,10 +36,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/api:name", (req, res) => {
-  const groupMember = req.params.name.toLowerCase();
-  if (sbeAndDg[groupMember]) {
-    res.json(sbeAndDg[groupMember]);
+app.get("/api/:name", (req, res) => {
+  const rapperName = req.params.name.toLowerCase();
+  if (sbeAndDg[rapperName]) {
+    res.json(sbeAndDg[rapperName]);
   } else {
     res.json(sbeAndDg["unknown"]);
   }
